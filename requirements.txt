@@ -1,0 +1,5 @@
+streamlit==1.37.1
+torch==2.4.0
+tiktoken==0.7.0
+safetensors==0.4.3
+huggingface_hub==0.24.6
