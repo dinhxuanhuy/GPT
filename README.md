@@ -1,19 +1,3 @@
----
-
-language:
-
-* en
-  license: other
-  pretty_name: GPT-2 From Scratch
-  tags:
-* gpt2
-* transformer
-* language-model
-* pytorch
-* text-generation
-
----
-
 # GPT-2 From Scratch
 
 This project is a personal learning project where I implemented a GPT-style language model from scratch using PyTorch.
