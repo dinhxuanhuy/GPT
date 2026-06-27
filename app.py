@@ -180,23 +180,18 @@ def main():
                 "Checkpoint not found. The app is running with random weights for pipeline testing only."
             )
 
-    prompt = st.text_area(
-        "Prompt",
-        value="Once upon a time in a small lab,",
-        height=180,
-    )
+    prompt = "who are you?"
+    
+    st.subheader("Prompt")
+    st.write(f"**{prompt}**")
 
     col1, col2 = st.columns([1, 2])
     with col1:
-        run = st.button("Generate", type="primary", use_container_width=True)
+        run = st.button("Generate Response", type="primary", use_container_width=True)
     with col2:
         st.write("")
 
     if run:
-        if not prompt.strip():
-            st.error("Please enter a prompt.")
-            st.stop()
-
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         model = model.to(device)
 
@@ -216,7 +211,7 @@ def main():
                     eos_id=50256,
                 )
                 out_text = tokenizer.decode(out[0].tolist())
-                st.subheader("Output")
+                st.subheader("Response")
                 st.write(out_text)
             except Exception as exc:
                 st.exception(exc)
